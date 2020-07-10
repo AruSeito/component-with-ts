@@ -1,15 +1,26 @@
 import React from 'react';
-import Button,{ButtonType,ButtonSize} from './components/Button/button';
-
+import Menu from './components/Menu/menu';
+import MenuItem from './components/Menu/menuItem';
+import { MenuProps } from './components/Menu/menu';
 function App() {
+  const testProps:MenuProps = {
+    defaultIndex:0,
+    className:'test'
+}
   return (
     <div className="App">
       <header className="App-header">
-        <Button >Hello</Button>
-        <Button disabled>Disabled Button</Button>
-        <Button btnType={ButtonType.Primary} size={ButtonSize.Large}>Large Primary</Button>
-        <Button btnType={ButtonType.Danger} size={ButtonSize.Small}>Large Primary</Button>
-        <Button btnType={ButtonType.Link} href="http://www.baidu.com" >Baidu Link</Button>
+      <Menu {...testProps}>
+            <MenuItem >
+                active
+            </MenuItem>
+            <MenuItem disabled >
+                disabled
+            </MenuItem>
+            <MenuItem >
+                xyz
+            </MenuItem>
+        </Menu>
 
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
