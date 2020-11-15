@@ -1,29 +1,10 @@
 import React from "react";
-import Menu from "./components/Menu/menu";
-import MenuItem from "./components/Menu/menuItem";
-import { MenuProps } from "./components/Menu/menu";
-import SubMenu from "./components/Menu/subMenu";
+import Alert from "./components/Alert/Alert";
 function App() {
-  const testProps: MenuProps = {
-    className: "test",
-    mode: "vertivcal",
-    defaultOpenMenus: ["2"],
-  };
   return (
     <div className="App">
       <header className="App-header">
-        <Menu {...testProps}>
-          <MenuItem>active</MenuItem>
-          <MenuItem disabled>disabled</MenuItem>
-          <SubMenu title="dropdown">
-            <MenuItem>active1</MenuItem>
-            <MenuItem>active2</MenuItem>
-            <MenuItem>active3</MenuItem>
-            <MenuItem>active4</MenuItem>
-          </SubMenu>
-          <MenuItem>xyz</MenuItem>
-        </Menu>
-
+        <Alert message="22222" description="sdsdjisjdisjdisjdijsidjsi" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>

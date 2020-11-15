@@ -1,0 +1,25 @@
+.alert {
+  padding: 20px;
+  border-radius: $border-radius;
+  .message {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &.not-display {
+    display: none;
+  }
+}
+
+.alert-success {
+  @include alert-style($success);
+}
+.alert-danger {
+  @include alert-style($danger);
+}
+.alert-info {
+  @include alert-style($info);
+}
+.alert-warning {
+  @include alert-style($warning);
+}
