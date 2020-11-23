@@ -1,5 +1,5 @@
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import React, { InputHTMLAttributes, ReactElement } from "react";
+import React, { ChangeEvent, InputHTMLAttributes, ReactElement } from "react";
 import classNames from "classnames";
 import Icon from "../Icon/icon";
 
@@ -15,6 +15,7 @@ export interface InputProps
   icon?: IconProp;
   prepend?: string | ReactElement;
   append?: string | ReactElement;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const Input: React.FC<InputProps> = (props) => {
@@ -26,6 +27,17 @@ export const Input: React.FC<InputProps> = (props) => {
     "input-group-prepand": !!prepend,
     "input-group-append": !!append,
   });
+
+  const fixValue = (value: any) => {
+    if (typeof value === "undefined" || value === null) {
+      return "";
+    }
+    return value;
+  };
+  if ("value" in resProps) {
+    delete resProps.defaultValue;
+    resProps.value = fixValue(props.value);
+  }
   return (
     <div className={classes} style={props.style}>
       {prepend && <div className="input-group-prepend">{prepend}</div>}
