@@ -90,13 +90,13 @@
   @include border-left-radius(0);
 }
 
-.input-size-sm .input-inner {
+.input-sm .input-inner {
   padding: $input-padding-y-sm $input-padding-x-sm;
   font-size: $input-font-size-sm;
   border-radius: $input-border-radius-sm;
 }
 
-.input-size-lg .input-inner {
+.input-lg .input-inner {
   padding: $input-padding-y-lg $input-padding-x-lg;
   font-size: $input-font-size-lg;
   border-radius: $input-border-radius-lg;
